@@ -1,6 +1,14 @@
 *.class
 
+.metadata
+## .project
+## .classpath
+## .settings
+
 # Package Files #
 *.jar
 *.war
 *.ear
+target
+*.nt.gz
+DB

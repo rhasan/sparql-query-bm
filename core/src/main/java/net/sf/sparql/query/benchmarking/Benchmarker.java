@@ -154,7 +154,7 @@ public class Benchmarker {
 	/**
 	 * Creates a new Benchmarker
 	 * <p>
-	 * A Benchmarker will always at least generate CSV and XML output unless you disable this by removing the {@link CsvProgressListener} and {@link XmlProgressListener} using the {@link #removeListener()} method
+	 * A Benchmarker will always at least generate CSV and XML output unless you disable this by removing the {@link CsvProgressListener} and {@link XmlProgressListener} using the {@link #removeListener} method
 	 * </p>
 	 */
 	public Benchmarker()
@@ -278,8 +278,6 @@ public class Benchmarker {
 	
 	/**
 	 * Gets the timeout for queries
-	 * @param timeout Timeout in seconds
-	 * @return
 	 */
 	public int getTimeout()
 	{
@@ -316,7 +314,7 @@ public class Benchmarker {
 	
 	/**
 	 * Sets the XML Results File
-	 * @param file Filename for XML Results, null disables XML results
+	 * @param xmlFile Filename for XML Results, null disables XML results
 	 */
 	public void setXmlResultsFile(String xmlFile)
 	{
@@ -565,7 +563,6 @@ public class Benchmarker {
 	
 	/**
 	 * Gets the Password used for HTTP Basic Authentication
-	 * @return
 	 */
 	public String getPassword()
 	{
@@ -713,7 +710,7 @@ public class Benchmarker {
 	/**
 	 * Runs the Benchmark
 	 * <p>
-	 * The progress of the benchmarking process can be monitored by the use of {@link ProgressListener} instances registered via the {@link Benchmarker.addListener()} method
+	 * The progress of the benchmarking process can be monitored by the use of {@link ProgressListener} instances registered via the {@link Benchmarker#addListener} method
 	 * </p>
 	 * <p>
 	 * At the conclusion of the benchmarking process a CSV and an XML file will be generated with full result details
@@ -1117,7 +1114,7 @@ public class Benchmarker {
 	 * Messages passed to this function will always have a terminating newline character added to them before being sent to listeners
 	 * </p>
 	 * <p>
-	 * You can configure what happens to the reporting messages by adding {@link ProgressListener} instances with the {@link #addListener()} method
+	 * You can configure what happens to the reporting messages by adding {@link ProgressListener} instances with the {@link #addListener} method
 	 * </p>
 	 * @param message Informational Message
 	 */

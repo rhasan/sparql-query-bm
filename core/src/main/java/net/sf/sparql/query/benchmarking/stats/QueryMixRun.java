@@ -84,7 +84,6 @@ public class QueryMixRun implements Comparable<QueryMixRun> {
 	
 	/**
 	 * Gets the global run order that reflects the order in which the query mixes and queries were run
-	 * @return
 	 */
 	public long getRunOrder()
 	{

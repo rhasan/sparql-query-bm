@@ -139,7 +139,6 @@ public class QueryRun implements Comparable<QueryRun> {
 	
 	/**
 	 * Gets the global run order for this query run
-	 * @return
 	 */
 	public long getRunOrder()
 	{

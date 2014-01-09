@@ -38,7 +38,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Utility Functions for Benchmarking
  * <p>
- * Note some of these functions mimic the functionality of {@link TimeUnit#convert()} except they keep the calculations as doubles which is important for us because we want as much precision in our measurements as possible
+ * Note some of these functions mimic the functionality of {@link TimeUnit} except they keep the calculations as doubles which is important for us because we want as much precision in our measurements as possible
  * </p>
  * @author rvesse
  *
@@ -52,7 +52,6 @@ public class BenchmarkerUtils {
 	/**
 	 * Converts nanoseconds to milliseconds
 	 * @param nanoseconds
-	 * @return
 	 */
 	public static double toMilliseconds(long nanoseconds)
 	{
@@ -62,7 +61,6 @@ public class BenchmarkerUtils {
 	/**
 	 * Converts nanoseconds to milliseconds
 	 * @param nanoseconds
-	 * @return
 	 */
 	public static double toMilliseconds(double nanoseconds)
 	{
@@ -72,7 +70,6 @@ public class BenchmarkerUtils {
 	/**
 	 * Converts nanoseconds to seconds
 	 * @param nanoseconds
-	 * @return
 	 */
 	public static double toSeconds(long nanoseconds)
 	{
@@ -82,7 +79,6 @@ public class BenchmarkerUtils {
 	/**
 	 * Converts nanoseconds to seconds
 	 * @param nanoseconds
-	 * @return
 	 */
 	public static double toSeconds(double nanoseconds)
 	{
@@ -113,7 +109,6 @@ public class BenchmarkerUtils {
 	/**
 	 * Formats a string for CSV escaping it as a double quoted CSV string if necessary
 	 * @param value
-	 * @return
 	 */
 	public static String toCsv(String value)
 	{

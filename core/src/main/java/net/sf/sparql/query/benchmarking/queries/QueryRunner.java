@@ -146,7 +146,8 @@ public class QueryRunner implements Callable<QueryRun> {
 		finally
 		{
 			//Clean up query execution
-			if (exec != null) exec.close();
+			//if (exec != null) 
+			    exec.close();
 		}
 	}
 

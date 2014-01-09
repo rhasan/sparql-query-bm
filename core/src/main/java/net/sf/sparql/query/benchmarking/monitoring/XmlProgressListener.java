@@ -31,16 +31,16 @@
 
 package net.sf.sparql.query.benchmarking.monitoring;
 
-import java.io.File;
-import java.io.PrintWriter;
-import java.util.Iterator;
+import java.io.File ;
+import java.io.PrintWriter ;
+import java.util.Iterator ;
 
-import net.sf.sparql.query.benchmarking.Benchmarker;
-import net.sf.sparql.query.benchmarking.BenchmarkerUtils;
-import net.sf.sparql.query.benchmarking.queries.BenchmarkQuery;
-import net.sf.sparql.query.benchmarking.queries.BenchmarkQueryMix;
-import net.sf.sparql.query.benchmarking.stats.QueryMixRun;
-import net.sf.sparql.query.benchmarking.stats.QueryRun;
+import net.sf.sparql.query.benchmarking.Benchmarker ;
+import net.sf.sparql.query.benchmarking.BenchmarkerUtils ;
+import net.sf.sparql.query.benchmarking.queries.BenchmarkQuery ;
+import net.sf.sparql.query.benchmarking.queries.BenchmarkQueryMix ;
+import net.sf.sparql.query.benchmarking.stats.QueryMixRun ;
+import net.sf.sparql.query.benchmarking.stats.QueryRun ;
 
 
 /**
@@ -449,7 +449,6 @@ public class XmlProgressListener implements ProgressListener
 		if (!closeTag) indent++;
 	}
 	
-	@SuppressWarnings("unused")
 	private void printTag(String tagname, String value)
 	{
 		writer.println(indent() + "<" + tagname + ">" + escape(value) + "</" + tagname + ">");

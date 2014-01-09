@@ -76,7 +76,7 @@ public class StreamProgressListener implements ProgressListener
 	/**
 	 * Creates a new Progress Listener for the given stream
 	 * @param output Output Stream
-	 * @param closeOnFinish Whether the Output Stream should be closed when the listener receives the {@link #handleFinished()} call
+	 * @param closeOnFinish Whether the Output Stream should be closed when the listener receives the {@link #handleFinished} call
 	 */
 	public StreamProgressListener(PrintStream output, boolean closeOnFinish)
 	{
@@ -97,7 +97,6 @@ public class StreamProgressListener implements ProgressListener
 	/**
 	 * Creates a new Progress Listener for the given stream
 	 * @param output Output Stream
-	 * @param closeOnFinish Whether the Ouput Stream should be closed when the listener receives the handleFinished() call
 	 */
 	public StreamProgressListener(OutputStream output)
 	{

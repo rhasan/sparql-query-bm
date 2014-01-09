@@ -47,7 +47,6 @@ import net.sf.sparql.query.benchmarking.BenchmarkerUtils;
 import net.sf.sparql.query.benchmarking.parallel.ParallelTimer;
 import net.sf.sparql.query.benchmarking.stats.QueryMixRun;
 import net.sf.sparql.query.benchmarking.stats.QueryRun;
-
 import org.apache.commons.math.stat.descriptive.moment.GeometricMean;
 import org.apache.commons.math.stat.descriptive.moment.StandardDeviation;
 import org.apache.commons.math.stat.descriptive.moment.Variance;
@@ -108,7 +107,8 @@ public class BenchmarkQueryMix {
 					f = new File(u.getFile());
 				}
 			}
-			BufferedReader reader = new BufferedReader(new FileReader(f));
+			@SuppressWarnings("resource")
+            BufferedReader reader = new BufferedReader(new FileReader(f));
 			String line = reader.readLine();
 			while (line != null)
 			{
@@ -163,7 +163,6 @@ public class BenchmarkQueryMix {
 
 	/**
 	 * Gets the Queries in this mix
-	 * @return
 	 */
 	public Iterator<BenchmarkQuery> getQueries()
 	{
@@ -172,7 +171,6 @@ public class BenchmarkQueryMix {
 	
 	/**
 	 * Gets an iterator over the query mix runs
-	 * @return
 	 */
 	public Iterator<QueryMixRun> getRuns()
 	{
@@ -182,7 +180,6 @@ public class BenchmarkQueryMix {
 	/**
 	 * Gets the Query with the specified ID
 	 * @param id
-	 * @return
 	 */
 	public BenchmarkQuery getQuery(int id)
 	{
@@ -191,7 +188,6 @@ public class BenchmarkQueryMix {
 	
 	/**
 	 * Gets the number of queries in the query set
-	 * @return
 	 */
 	public int size()
 	{
@@ -412,7 +408,7 @@ public class BenchmarkQueryMix {
 		int i = 0;
 		for (QueryMixRun r : this.runs)
 		{
-			values[i] = (double)r.getTotalRuntime();
+			values[i] = r.getTotalRuntime();
 			i++;
 		}
 		return BenchmarkQueryMix.gmean.evaluate(values);
@@ -462,7 +458,7 @@ public class BenchmarkQueryMix {
 		int i = 0;
 		for (QueryMixRun r : this.runs)
 		{
-			values[i] = (double)r.getTotalRuntime();
+			values[i] = r.getTotalRuntime();
 			i++;
 		}
 		return var.evaluate(values);
@@ -478,7 +474,7 @@ public class BenchmarkQueryMix {
 		int i = 0;
 		for (QueryMixRun r : this.runs)
 		{
-			values[i] = (double)r.getTotalRuntime();
+			values[i] = r.getTotalRuntime();
 			i++;
 		}
 		return sdev.evaluate(values);

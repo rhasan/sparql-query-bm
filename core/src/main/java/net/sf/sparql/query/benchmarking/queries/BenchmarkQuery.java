@@ -83,7 +83,6 @@ public class BenchmarkQuery {
 	
 	/**
 	 * Gets the Name of the Query (typically the filename)
-	 * @return
 	 */
 	public String getName()
 	{
@@ -92,7 +91,6 @@ public class BenchmarkQuery {
 	
 	/**
 	 * Gets the actual Query
-	 * @return
 	 */
 	public Query getQuery()
 	{
@@ -101,7 +99,6 @@ public class BenchmarkQuery {
 	
 	/**
 	 * Gets the Query String used to create this Query
-	 * @return
 	 */
 	public String getQueryString()
 	{
@@ -110,7 +107,6 @@ public class BenchmarkQuery {
 	
 	/**
 	 * Gets an iterator over the query runs
-	 * @return
 	 */
 	public Iterator<QueryRun> getRuns()
 	{
@@ -146,7 +142,6 @@ public class BenchmarkQuery {
 	 * <p>
 	 * For non-SELECT queries this is identical to {@link #getTotalRuntime()}, for SELECT queries this is the total of the time spent waiting to start getting the response from the HTTP endpoint
 	 * </p>
-	 * @return
 	 */
 	public long getTotalResponseTime()
 	{
@@ -193,7 +188,7 @@ public class BenchmarkQuery {
 		int i = 0;
 		for (QueryRun r : this.runs)
 		{
-			values[i] = (double)r.getRuntime();
+			values[i] = r.getRuntime();
 			i++;
 		}
 		return BenchmarkQuery.gmean.evaluate(values);
@@ -269,7 +264,7 @@ public class BenchmarkQuery {
 		int i = 0;
 		for (QueryRun r : this.runs)
 		{
-			values[i] = (double)r.getRuntime();
+			values[i] = r.getRuntime();
 			i++;
 		}
 		return BenchmarkQuery.sdev.evaluate(values);
@@ -287,7 +282,7 @@ public class BenchmarkQuery {
 	}
 	
 	/**
-	 * Calculates how many times this query could be executed multi-threaded per second based upon the {@link BenchmarkerQuery#getActualAverageRuntime()}
+	 * Calculates how many times this query could be executed multi-threaded per second based upon the {@link BenchmarkQuery#getActualAverageRuntime()}
 	 * @return Actual Queries per Second
 	 */
 	public double getActualQueriesPerSecond()
